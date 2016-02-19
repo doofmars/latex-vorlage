@@ -157,6 +157,7 @@
 % Breite des Nummerierungsbereiches [Abbildung 1:]
 \newlength{\figureLength}
 \settowidth{\figureLength}{\bfseries\cftfigpresnum\cftfigaftersnum}
+\addtolength{\figureLength}{2mm} %extra offset
 \setlength{\cftfignumwidth}{\figureLength}
 \setlength{\cftfigindent}{0cm}
 
@@ -179,6 +180,7 @@
 % Breite des Nummerierungsbereiches [Abbildung 1:]
 \newlength{\tableLength}
 \settowidth{\tableLength}{\bfseries\cfttabpresnum\cfttabaftersnum}
+\addtolength{\tableLength}{3mm} %extra offset
 \setlength{\cfttabnumwidth}{\tableLength}
 \setlength{\cfttabindent}{0cm}
 

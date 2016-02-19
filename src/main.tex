@@ -50,6 +50,34 @@
 \listoftables
 \cleardoubleemptypage
 
+% Quellcodeverzeichnis einbinden und ins Inhaltsverzeichnis
+\phantomsection
+\addcontentsline{toc}{chapter}{Quellcodeverzeichnis}
+
+%Define listing
+\makeatletter
+\begingroup\let\newcounter\@gobble\let\setcounter\@gobbletwo
+  \globaldefs\@ne \let\c@loldepth\@ne
+  \newlistof{listings}{lol}{\lstlistlistingname}
+\endgroup
+\let\l@lstlisting\l@listings
+\makeatother
+\setlength{\cftlistingsindent}{0em}
+\renewcommand{\cftlistingsafterpnum}{\vskipspt}
+\renewcommand*{\cftlistingspresnum}{\lstlistingname~}
+\settowidth{\cftlistingsnumwidth}{\cftlistingspresnum}
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+% Tabellenverzeichnis anpassen
+\renewcommand{\lstlistingname}{Codeauschnitt}
+\renewcommand{\cftlistingsaftersnum}{:}
+% Breite des Nummerierungsbereiches [Codeauschnitt 1:]
+\newlength{\codeLength}
+\settowidth{\codeLength}{\bfseries\lstlistingname\cftlistingsaftersnum}
+\addtolength{\codeLength}{5mm}
+\setlength{\cftlistingsnumwidth}{\codeLength}
+\lstlistoflistings
+\cleardoubleemptypage
+
 % Abkürzungsverzeichnis
 \include{content/abbreviations}
 
