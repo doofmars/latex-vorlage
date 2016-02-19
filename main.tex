@@ -1,0 +1,78 @@
+\documentclass[
+	12pt,
+	a4paper,
+	bibtotoc,
+	cleardoubleempty, 
+	idxtotoc,
+	ngerman,
+	openright
+	final,
+	listof=nochaptergap,
+	]{scrbook}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\include{preamble}
+
+\begin{document}
+
+\setcounter{secnumdepth}{3}
+
+% Titelblatt
+\include{content/title}
+\cleardoubleemptypage
+
+\frontmatter
+
+
+% Abstract
+\include{content/abstract}
+\cleardoubleemptypage
+
+% Inhaltsverzeichnis
+\tableofcontents
+\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+\cleardoubleemptypage
+
+% Abbildungsverzeichnis einbinden und ins Inhaltsverzeichnis
+% WORKAROUND: tocloft und KOMA funktionieren zusammen nicht
+% korrekt\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename} 
+\listoffigures
+\cleardoubleemptypage
+
+% Tabellenverzeichnis einbinden und ins Inhaltsverzeichnis
+% WORKAROUND: tocloft und KOMA funktionieren zusammen nicht
+% korrekt\phantomsection
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\cleardoubleemptypage
+
+% Abkürzungsverzeichnis
+\include{content/abbreviations}
+
+\mainmatter
+
+\include{content/einleitung}
+\include{content/grundlagen}
+\include{content/eigeneKapitel}
+\include{content/ausblick}
+\include{content/fazit}
+
+% Schalgwortverzeichnis (Index)
+%\printindex
+
+% Literaturverzeichnis
+\singlespacing
+\bibliographystyle{alphadin}
+\bibliography{bibtex}
+
+% Eidesstattliche Erklärung
+\include{content/affirmation}
+
+\appendix
+% Hier können Anhaenge angefuegt werden
+
+\end{document}      

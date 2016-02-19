@@ -1,0 +1,256 @@
+% ##################################################
+% Unterstuetzung fuer die deutsche Sprache
+% ##################################################
+\usepackage{ngerman}
+\usepackage[ngerman]{babel}
+
+% ##################################################
+% Dokumentvariablen
+% ##################################################
+
+% Persoenliche Daten
+\newcommand{\docNachname}{BERNER}
+\newcommand{\docVorname}{FABIAN}
+\newcommand{\docStrasse}{ROBERT-GERWIG-PLATZ 1}
+\newcommand{\docOrt}{FURTWANGEN}
+\newcommand{\docPlz}{78120}
+\newcommand{\docEmail}{FABIAN.BERNER@hs-furtwangen.de}
+\newcommand{\docMatrikelnummer}{1 4 8 15 16 23 42}
+
+% Dokumentdaten
+\newcommand{\docTitle}{TITEL}
+%\newcommand{\docUntertitle}{} % Kein Untertitel
+\newcommand{\docUntertitle}{UNTERTITEL}
+% Arten der Arbeit: Bachelorthesis, Masterthesis, Seminararbeit, Diplomarbeit
+\newcommand{\docArtDerArbeit}{ART DER ARBEIT}
+%Studiengaenge: Allgemeine Informatik Bachelor, Computer Networking Bachelor,
+% Software-Produktmanagement Bachelor, Advanced Computer Scinece Master
+\newcommand{\docStudiengang}{STUDIENGANG}
+\newcommand{\docAbgabedatum}{11.11.2011}
+\newcommand{\docErsterReferent}{ERSTER REFERENT}
+%\newcommand{\docZweiterReferent}{-} % Wenn es nur einen Betreuer gibt
+\newcommand{\docZweiterReferent}{ZWEITER REFERENT}
+
+% ##################################################
+% Allgemeine Pakete
+% ##################################################
+
+% Abbildungen einbinden
+\usepackage{graphicx}
+
+% Zusaetsliche Sonderzeichen
+\usepackage{dingbat}
+
+% Farben
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+% Maskierung von URLs und Dateipfaden
+\usepackage[hyphens]{url}
+
+% Deutsche Anfuehrungszeichen
+\usepackage[babel, german=quotes]{csquotes}
+
+% Pakte zur Index-Erstellung (Schlagwortverzeichnis)
+\usepackage{index}
+\makeindex
+
+% Ipsum Lorem
+% Paket wird nur für das Beispiel gebraucht und kann gelöscht werden
+\usepackage{lipsum}
+
+% ##################################################
+% Seitenformatierung
+% ##################################################
+\usepackage[
+	portrait,
+	bindingoffset=1.5cm,
+	inner=2.5cm,
+	outer=2.5cm,
+	top=3cm,
+	bottom=2cm,
+	%includeheadfoot
+	]{geometry}
+
+% ##################################################
+% Kopf- und Fusszeile
+% ##################################################
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[EL,OR]{\sffamily\thepage}
+\fancyhead[ER,OL]{\sffamily\leftmark}
+
+\fancypagestyle{headings}{}
+
+\fancypagestyle{plain}{}
+
+\fancypagestyle{empty}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+%Kein "Kapitel # NAME" in der Kopfzeile
+\renewcommand{\chaptermark}[1]{
+	\markboth{#1}{}
+   	\markboth{\thechapter.\ #1}{}
+}
+
+% ##################################################
+% Schriften
+% ##################################################
+
+% Stdandardschrift festlegen
+\renewcommand{\familydefault}{\sfdefault}
+
+% Standard Zeilenabstand: 1,5 zeilig
+\usepackage{setspace}
+\onehalfspacing 
+
+% Schriftgroessen festlegen
+\addtokomafont{chapter}{\sffamily\large\bfseries} 
+\addtokomafont{section}{\sffamily\normalsize\bfseries} 
+\addtokomafont{subsection}{\sffamily\normalsize\mdseries} 
+\addtokomafont{caption}{\sffamily\normalsize\mdseries} 
+
+% ##################################################
+% Inhaltsverzeichnis / Allgemeine Verzeichniseinstellungen
+% ##################################################
+
+\usepackage{tocloft}
+
+% Punkte auch bei Kapiteln
+\renewcommand{\cftchapdotsep}{3}
+\renewcommand{\cftdotsep}{3}
+
+% Schriftart und -groesse im Inhaltsverzeichnis anpassen
+\renewcommand{\cftchapfont}{\sffamily\normalsize}
+\renewcommand{\cftsecfont}{\sffamily\normalsize}
+\renewcommand{\cftsubsecfont}{\sffamily\normalsize}
+\renewcommand{\cftchappagefont}{\sffamily\normalsize}
+\renewcommand{\cftsecpagefont}{\sffamily\normalsize}
+\renewcommand{\cftsubsecpagefont}{\sffamily\normalsize}
+
+%Zeilenabstand in den Verzeichnissen einstellen
+\setlength{\cftparskip}{.5\baselineskip}
+\setlength{\cftbeforechapskip}{.1\baselineskip}
+
+% ##################################################
+% Abbildungsverzeichnis und Abbildungen
+% ##################################################
+
+\usepackage{caption}
+
+\usepackage{wrapfig}
+
+% Nummerierung von Abbildungen
+\renewcommand{\thefigure}{\arabic{figure}}
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+
+% Abbildungsverzeichnis anpassen
+\renewcommand{\cftfigpresnum}{Abbildung }
+\renewcommand{\cftfigaftersnum}{:}
+
+% Breite des Nummerierungsbereiches [Abbildung 1:]
+\newlength{\figureLength}
+\settowidth{\figureLength}{\bfseries\cftfigpresnum\cftfigaftersnum}
+\setlength{\cftfignumwidth}{\figureLength}
+\setlength{\cftfigindent}{0cm}
+
+% Schriftart anpassen
+\renewcommand\cftfigfont{\sffamily}
+\renewcommand\cftfigpagefont{\sffamily}
+
+% ##################################################
+% Tabellenverzeichnis und Tabellen
+% ##################################################
+
+% Nummerierung von Tabellen
+\renewcommand{\thetable}{\arabic{table}}
+\counterwithout{table}{chapter}
+
+% Tabellenverzeichnis anpassen
+\renewcommand{\cfttabpresnum}{Tabelle }
+\renewcommand{\cfttabaftersnum}{:}
+
+% Breite des Nummerierungsbereiches [Abbildung 1:]
+\newlength{\tableLength}
+\settowidth{\tableLength}{\bfseries\cfttabpresnum\cfttabaftersnum}
+\setlength{\cfttabnumwidth}{\tableLength}
+\setlength{\cfttabindent}{0cm}
+
+%Schriftart anpassen
+\renewcommand\cfttabfont{\sffamily}
+\renewcommand\cfttabpagefont{\sffamily}
+
+% Unterdrueckung von vertikalen Linien
+\usepackage{booktabs}
+
+% ##################################################
+% Listings (Quellcode)
+% ##################################################
+
+\usepackage{listings}
+\lstset{
+	language=java,
+	backgroundcolor=\color{white},
+	breaklines=true,
+	prebreak={\carriagereturn},
+ 	breakautoindent=true,
+ 	numbers=left,
+ 	numberstyle=\tiny,
+ 	stepnumber=2,
+ 	numbersep=5pt,
+ 	keywordstyle=\color{blue},
+   	commentstyle=\color{green},   
+   	stringstyle=\color{gray}
+}
+  	
+% ##################################################
+% Theoreme
+% ##################################################
+  	
+% Umgebung fuer Beispiele
+\newtheorem{beispiel}{Beispiel}
+
+% Umgebung fuer These
+\newtheorem{these}{These}
+
+% Umgebung fuer Definitionen
+\newtheorem{definition}{Definition}
+  	
+% ##################################################
+% Literaturverzeichnis
+% ##################################################
+
+\usepackage{bibgerm}
+
+% ##################################################
+% Abkuerzungsverzeichnis
+% ##################################################
+
+\usepackage[printonlyused]{acronym}
+
+% ##################################################
+% PDF / Dokumenteninternelinks
+% ##################################################
+
+\usepackage[
+	colorlinks=false,
+   	linkcolor=black,
+   	citecolor=black,
+  	filecolor=black,
+	urlcolor=black,
+    bookmarks=true,
+    bookmarksopen=true,
+    bookmarksopenlevel=3,
+    bookmarksnumbered,
+    plainpages=false,
+    pdfpagelabels=true,
+    hyperfootnotes,
+    pdftitle ={\docTitle},
+    pdfauthor={\docVorname~\docNachname},
+    pdfcreator={\docVorname~\docNachname}]{hyperref}
