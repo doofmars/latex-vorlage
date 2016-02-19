@@ -31,13 +31,15 @@
 \cleardoubleemptypage
 
 % Inhaltsverzeichnis
-\tableofcontents
+\phantomsection
 \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+\tableofcontents
 \cleardoubleemptypage
 
 % Abbildungsverzeichnis einbinden und ins Inhaltsverzeichnis
 % WORKAROUND: tocloft und KOMA funktionieren zusammen nicht
 % korrekt\phantomsection
+\phantomsection 
 \addcontentsline{toc}{chapter}{\listfigurename} 
 \listoffigures
 \cleardoubleemptypage
