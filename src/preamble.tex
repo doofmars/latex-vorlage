@@ -89,7 +89,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[EL,OR]{\sffamily\thepage}
-\fancyhead[ER,OL]{\sffamily\leftmark}
+\fancyhead[ER,OL]{\sffamily\nouppercase{\leftmark}}
 
 \fancypagestyle{headings}{}
 
@@ -99,6 +99,10 @@
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
 }
+
+%Speichert \chaptermark in \oldchaptermark damit 
+% es für die Anhänge zurückgesetzt werden kann
+\let\oldchaptermark\chaptermark
 
 %Kein "Kapitel # NAME" in der Kopfzeile
 \renewcommand{\chaptermark}[1]{
@@ -122,6 +126,12 @@
 \addtokomafont{section}{\sffamily\normalsize\bfseries} 
 \addtokomafont{subsection}{\sffamily\normalsize\mdseries} 
 \addtokomafont{caption}{\sffamily\normalsize\mdseries} 
+
+%Einrücken von Absätzen deaktivieren
+\setlength{\parindent}{0pt}
+
+%Zeilenabstand bei abstätzen
+\usepackage{parskip}
 
 % ##################################################
 % Inhaltsverzeichnis / Allgemeine Verzeichniseinstellungen
@@ -208,6 +218,12 @@
 % Unterdrueckung von vertikalen Linien
 \usepackage{booktabs}
 
+%Multi row für spezifische zellen
+\usepackage{multirow}
+
+%Additional table package
+\usepackage{tabu}
+
 % ##################################################
 % Listings (Quellcode)
 % ##################################################
@@ -252,9 +268,44 @@
 				firstline=#1,
 				lastline=#2,
 				caption={#4, #5}, 
-				label={listing_#4_#5}]
+				label={implementation_listing_#4_#5}]
 				{#6}
 }
+
+% ##################################################
+% Appendix
+% ##################################################
+
+%Calc packet für berechnungen
+\usepackage{calc}
+
+%Appendix paket, setzen der flags für das TOC
+\usepackage[toc,title,titletoc]{appendix} 
+
+%Umbenennen der überschrift für die Anhänge 
+\renewcommand{\appendixtocname}{Anhänge}
+
+%Befehl für einen neuen Bericht und die erste seite als bild
+\newcommand{\appendixsection}[2]{
+\section{#1}
+\appendixsingle{#2}
+}
+
+%Befehl für einzelne seite als bild eingefasst, damit überschrift und kopfzeile
+% bestehen bleibt. 
+\newcommand{\appendixsingle}[1]{
+\vspace{-10cm}
+\vfill
+\mbox{}\hspace{-1.5cm}\includegraphics[width=\linewidth+3cm]{#1}\hspace{-1.5cm}\mbox{}
+\vspace{-10cm}
+\vfill
+\mbox{}
+}
+
+%Datenträger Tabelle
+\definecolor{lightgray}{gray}{0.85}
+\definecolor{ultralightgray}{gray}{0.95}
+\definecolor{mygray}{gray}{0.70}
 
 % ##################################################
 % Theoreme

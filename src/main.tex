@@ -102,7 +102,15 @@
 % Eidesstattliche Erklärung
 \include{content/framework/affirmation}
 
-\appendix
-% Hier können Anhaenge angefuegt werden
+%Zurücksetzen \chaptermark
+\let\chaptermark\oldchaptermark
 
+% Hier können Anhaenge angefuegt werden
+\begin{appendices}
+\chapter{Monatsberichte}
+Nun folgen die Monatsberichte
+\newpage
+\appendixsection{Monatsbericht Februar}{../report/report.pdf}
+\appendixsection{Monatsbericht Januar}{../report/report.pdf}
+\end{appendices}
 \end{document}      
