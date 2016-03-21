@@ -20,26 +20,28 @@ Funktionen:
 
 ### Verzeichnisstruktur 
 
+```
 ├─README.MD  
 ├─.gitignore  
 ├─*document_BUILD.pdf* (generierte LaTeX Pdf von Texlipse)  
 └─── src  
-&ensp;├── main.tex (Hauptdatei)  
-&ensp;├── preamble.tex (Konfiguration)  
-&ensp;├── bibtex.bib (Quellen)  
-&ensp;└── content (Beinhaltet die Kapitel)  
-&ensp;&ensp;├── 0_introduction.tex  
-&ensp;&ensp;├── 1_basics.tex  
-&ensp;&ensp;├── 2-7_custom_chapter.tex  
-&ensp;&ensp;├── 8_prospect.tex  
-&ensp;&ensp;├── 9_conclusion.tex  
-&ensp;&ensp;├── code  
-&ensp;&ensp;|&ensp;└── example.java  
-&ensp;&ensp;├── pictures  
-&ensp;&ensp;|&ensp;└── hfu.jp  
-&ensp;&ensp;└─── framework  
-&ensp;&ensp;&ensp;├── abbreviations.tex (Abkürzungen)  
-&ensp;&ensp;&ensp;├── abstract.tex (Abstract)  
-&ensp;&ensp;&ensp;└── title.tex (Deckblatt)  
+   ├── main.tex (Hauptdatei)  
+   ├── preamble.tex (Konfiguration)  
+   ├── bibtex.bib (Quellen)  
+   └── content (Beinhaltet die Kapitel)  
+      ├── 0_introduction.tex  
+      ├── 1_basics.tex  
+      ├── 2-7_custom_chapter.tex  
+      ├── 8_prospect.tex  
+      ├── 9_conclusion.tex  
+      ├── code  
+      |   └── example.java  
+      ├── pictures  
+      |   └── hfu.jp  
+      └─── framework  
+         ├── abbreviations.tex (Abkürzungen)  
+         ├── abstract.tex (Abstract)  
+         └── title.tex (Deckblatt)  
+```
 
 Über Ergänzungen in Form eines Pull-Requests freue ich mich.
