@@ -9,6 +9,7 @@
 *.blg
 *.dvi
 *.fdb_latexmk
+*.fls
 *.glg
 *.glo
 *.gls
@@ -42,3 +43,4 @@
 .DS_Store
 /tmp/
 *BUILD.pdf
+*.swp
