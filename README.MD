@@ -48,7 +48,7 @@ Benötigte Pakete (apt-get):
 
 texlive
 latexmk
-texlive-lang-ger
+texlive-lang-german
 texlive-latex-extra
 texlive-fonts-extra
 
