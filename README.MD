@@ -1,6 +1,6 @@
-## Erweitere Latex-Vorlage
+# Erweitere Latex-Vorlage
 
-Dies ist eine erweitere Latex Vorlage.
+Dies ist eine erweitere LaTeX Vorlage.
 Sie basiert auf der Vorlage von Fabian Berner
 und wurde im Rahmen meiner Thesis um Funktionen 
 erweitert die ich für die Arbeit für sinnvoll erachtet habe.
@@ -8,17 +8,17 @@ Die original Version kann unter folgender Adresse abgerufen werden:
 [LaTeX Vorlage](http://webuser.hs-furtwangen.de/~berner/wa.html)
 
 
-Funktionen:
+## Funktionen:
 
 + Quellcodeverzeichnis
 + Veränderte Verzeichnis-Struktur
 + Dateistruktur beginnend mit Zahlen zur Sortierung des Quellcodes
 + Abgeänderte Nummerierung im Inhaltsverzeichnis
-+ Gitignore für Latex und TMP-Ordner
++ Gitignore für LaTeX und TMP-Ordner
 + Vorbereitung zum Einsatz in [Texlipse](http://texlipse.sourceforge.net/)
 + Angepasste Code-Darstellung
 
-### Verzeichnisstruktur 
+## Verzeichnisstruktur 
 
 ```
 ├─README.MD  
@@ -44,13 +44,25 @@ Funktionen:
          └── title.tex (Deckblatt)  
 ```
 
-Benötigte Pakete (apt-get):
+## LaTeX Pakete:
 
-texlive
-latexmk
-texlive-lang-ger
-texlive-latex-extra
-texlive-fonts-extra
+### Linux 
+
+Benötigte Pakete (können mit apt-get installiert werden):
+
++ texlive
++ latexmk
++ texlive-lang-ger
++ texlive-latex-extra
++ texlive-fonts-extra
+
+### Windows:
+
+[Miktex](http://miktex.org/download)
+Fehlende LaTeX pakete werden bei bedarf installiert.
+
+### OSX: 
+[Mactex](http://tug.org/mactex/)
 
 
 Über Ergänzungen in Form eines Pull-Requests freue ich mich.
