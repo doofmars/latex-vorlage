@@ -44,4 +44,13 @@ Funktionen:
          └── title.tex (Deckblatt)  
 ```
 
+Benötigte Pakete (apt-get):
+
+texlive
+latexmk
+texlive-lang-ger
+texlive-latex-extra
+texlive-fonts-extra
+
+
 Über Ergänzungen in Form eines Pull-Requests freue ich mich.
