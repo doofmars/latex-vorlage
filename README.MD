@@ -52,7 +52,7 @@ Benötigte Pakete (können mit apt-get installiert werden):
 
 + texlive
 + latexmk
-+ texlive-lang-ger
++ texlive-lang-german
 + texlive-latex-extra
 + texlive-fonts-extra
 
