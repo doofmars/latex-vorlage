@@ -44,3 +44,5 @@
 /tmp/
 *BUILD.pdf
 *.swp
+*.sublime-project
+*.sublime-workspace
