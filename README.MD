@@ -48,6 +48,10 @@ Die original Version kann unter folgender Adresse abgerufen werden:
 
 ### Linux 
 
+texlive-Repository hinzufügen:
+
+```sudo add-apt-repository -y ppa:texlive-backports/ppa```
+
 Benötigte Pakete (können mit apt-get installiert werden):
 
 + texlive
@@ -55,6 +59,7 @@ Benötigte Pakete (können mit apt-get installiert werden):
 + texlive-lang-german
 + texlive-latex-extra
 + texlive-fonts-extra
++ texlive-bibtex-extra
 
 ### Windows:
 
